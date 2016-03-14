@@ -21,15 +21,32 @@ public class Driver {
 		
 		generateStudents(20, studentArrayList);
 		generateStudents(20, studentLinkedList);
+
+
 		
 		//Determine which data structure is fastest for each
 		//operation. Complete the action
+
 		
 		//Delete the first, if any, Student with the last name of "Smith"
-		
+		int count = 0;
+		for(int i = 0; i<studentLinkedList.getSize(); i++){
+			if(count<1){
+				if(studentLinkedList.get(i).getLastName().equals("Smith")){
+					studentArrayList.remove(i);
+					count +=1;
+				}
+			}
+		}
+
+
 		//Change the name of the 3rd entry to "Joe Montana"
+		studentArrayList.get(2).setFirstName("Joe");
+		studentArrayList.get(2).setLastName("Montana");
+
 		
 		//Remove the 10th element
+		studentLinkedList.remove(10);
 	}
 	
 	//To generate the ArrayList
